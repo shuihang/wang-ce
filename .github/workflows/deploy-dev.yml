@@ -33,7 +33,7 @@ jobs:
                   ssh root@39.100.76.235 "
                     # 【注意】用 root 账号登录，手动创建 /home/xiejie/wang-ce/wang-ce-server 目录
                     # 然后 git clone https://github.com/shuihang/wang-ce-server.git -b dev （私有仓库，使用 github 用户名和密码）
-                    # 记得删除 origin ，否则会暴露 github 密码
+                    # 记得删除 origin ，否则会暴露 github 密码;
 
                     cd /home/xiejie/wang-ce/wang-ce-server
                     git remote add origin https://shuihang:${{secrets.WFP_PASSWORD}}@github.com/shuihang/wang-ce-server.git
