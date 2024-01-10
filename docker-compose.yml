@@ -1,0 +1,25 @@
+version: '3'
+services:
+  wang-ce-server:
+    build:
+      context: . # 当前目录
+      dockerfile: Dockerfile # 基于Dockerfile 构建
+    image: wang-ce-server
+    container_name: wang-ce-server
+    ports:
+      - 9101:9100 # 宿主机通过9101端口访问docker容器中的9000端口
+#  test-mongo:
+#    image: mongo # 引用官网 mongo镜像
+#    restart: always
+#    container_name: test-mongo
+#    volumes:
+#      - .docker-volumes/mongo/data:/data/db
+#    ports:
+#      # 宿主机，可以用127.0.0.1:27018访问 docker容器中的数据库27017端口
+#      # 但是，其他docker 容器不能，因为此时127.0.0.1是docker容器本身，而不是宿主机
+#      - 27018:27017
+#    environment:
+#      - MONGO_INITDB_DATABASE=cjx-cli
+#      - TZ=Asia/Shanghai
+#    # MONGO_INITDB_ROOT_USERNAME: root
+#    # MONGO_INITDB_ROOT_PASSWORD: root

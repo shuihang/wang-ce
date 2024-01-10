@@ -5,6 +5,6 @@
     "paths": {
       "@/module/*": ["app/module/*"]
     },
-    "baseUrl": "."
+    "baseUrl": ".",
   }
 }

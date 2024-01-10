@@ -29,6 +29,9 @@ dependencies:
   egg:
     specifier: ^3.15.0
     version: 3.17.5
+  egg-mysql:
+    specifier: ^4.0.0
+    version: 4.0.0
   egg-scripts:
     specifier: ^2.17.0
     version: 2.17.0
@@ -1230,6 +1233,13 @@ packages:
       uri-js: 4.4.1
     dev: true
 
+  /ali-rds@5.1.2:
+    resolution: {integrity: sha512-YI0jWDiDzmhbZ9i5MPWky8Fc6Eg+s6vTt7BdomrGVtE1dV+Ikzb5PjdxfvGyTnHD89TdjTcV6KriM1+0h7Gp1g==}
+    engines: {node: '>= 14.17.0'}
+    dependencies:
+      mysql: 2.18.1
+    dev: false
+
   /ansi-colors@4.1.1:
     resolution: {integrity: sha512-JoX0apGbHaUJBNl6yF+p6JAFYZ666/hhCGKN5t9QFjbJQKUU/g8MNbFDbvfrgKXvI1QpZplPOnwIo99lX/AAmA==}
     engines: {node: '>=6'}
@@ -1449,6 +1459,10 @@ packages:
 
   /base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
+
+  /bignumber.js@9.0.0:
+    resolution: {integrity: sha512-t/OYhhJ2SD+YGBQcjY8GzzDHEk9f3nerxjtfa6tlMXfe7frs/WozhvCNoGvpM0P3bNf3Gq5ZRMlGr5f3r4/N8A==}
+    dev: false
 
   /binary-extensions@2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
@@ -2365,6 +2379,13 @@ packages:
       egg-path-matching: 1.1.0
       humanize-bytes: 1.0.1
       stream-wormhole: 1.1.0
+
+  /egg-mysql@4.0.0:
+    resolution: {integrity: sha512-PvGAyd2sYPswbZql5u5tSWz2T+RU7kKcMQ21Z4v8yoyXkBJ/gLCzHjwm/J4pUgEuELiXrr2IPUsp/rC0j3KxNw==}
+    engines: {node: '>=16.0.0'}
+    dependencies:
+      ali-rds: 5.1.2
+    dev: false
 
   /egg-onerror@2.2.0:
     resolution: {integrity: sha512-wYAU2hBASXWaFD2A2WiUbffpEaLUiWeYkHN0u3Fvbi2uYeMSmQoqaIUsBbKb6paopiwRFFQzm8M0T3GVLwU1jw==}
@@ -4436,6 +4457,16 @@ packages:
     resolution: {integrity: sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==}
     dev: true
 
+  /mysql@2.18.1:
+    resolution: {integrity: sha512-Bca+gk2YWmqp2Uf6k5NFEurwY/0td0cpebAucFpY/3jhrwrVGuxU2uQFCHjU19SJfje0yQvi+rVWdq78hR5lig==}
+    engines: {node: '>= 0.6'}
+    dependencies:
+      bignumber.js: 9.0.0
+      readable-stream: 2.3.7
+      safe-buffer: 5.1.2
+      sqlstring: 2.3.1
+    dev: false
+
   /mz-modules@2.1.0:
     resolution: {integrity: sha512-sjk8lcRW3vrVYnZ+W+67L/2rL+jbO5K/N6PFGIcLWTiYytNr22Ah9FDXFs+AQntTM1boZcoHi5qS+CV1seuPog==}
     engines: {node: '>=6.0.0'}
@@ -4870,6 +4901,18 @@ packages:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
 
+  /readable-stream@2.3.7:
+    resolution: {integrity: sha512-Ebho8K4jIbHAxnuxi7o42OrZgF/ZTNcsZj6nRKyUmkhLFq8CHItp/fy6hQZuZmP/n3yZ9VBUbp4zz/mX8hmYPw==}
+    dependencies:
+      core-util-is: 1.0.3
+      inherits: 2.0.4
+      isarray: 1.0.0
+      process-nextick-args: 2.0.1
+      safe-buffer: 5.1.2
+      string_decoder: 1.1.1
+      util-deprecate: 1.0.2
+    dev: false
+
   /readable-stream@2.3.8:
     resolution: {integrity: sha512-8p0AUk4XODgIewSi0l8Epjs+EVnWiK7NoDIEGU0HhE7+ZyY8D1IMY7odu5lRrFXGg71L15KG8QrPmum45RTtdA==}
     dependencies:
@@ -5250,6 +5293,11 @@ packages:
 
   /sprintf-js@1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
+    dev: false
+
+  /sqlstring@2.3.1:
+    resolution: {integrity: sha512-ooAzh/7dxIG5+uDik1z/Rd1vli0+38izZhGzSa34FwR7IbelPWCCKSNIl8jlL/F7ERvy8CB2jNeM1E9i9mXMAQ==}
+    engines: {node: '>= 0.6'}
     dev: false
 
   /sqlstring@2.3.3:
