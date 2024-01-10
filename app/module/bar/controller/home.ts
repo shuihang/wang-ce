@@ -14,6 +14,6 @@ export class HomeController {
   })
   async index() {
     this.logger.info('hello egg logger');
-    return 'hello tEgg ts test1';
+    return 'hello tEgg ts test2';
   }
 }

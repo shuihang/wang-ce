@@ -12,7 +12,7 @@ RUN pnpm install
 #RUN npm run tsc
 
 # 启动
-CMD echo $SERVER_NAME && echo $AUTHOR_NAME && npm run dev
+CMD echo $SERVER_NAME && echo $AUTHOR_NAME && pnpm run dev
 
 # 环境变量
 ENV SERVER_NAME='server'
