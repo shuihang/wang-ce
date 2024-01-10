@@ -2,6 +2,13 @@ import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
 
 export default (appInfo: EggAppInfo) => {
   const config = {
+    cluster: {
+      listen: {
+        path: '',
+        port: 9100,
+        hostname: '0.0.0.0',
+      },
+    },
     mysql: {
       // 单数据库信息配置
       client: {

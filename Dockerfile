@@ -7,12 +7,12 @@ COPY . /app
 RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' > /etc/timezone
 
 # 安装RabbitMQ依赖
-RUN npm install -g pnpm
+RUN npm install pnpm -g
 RUN pnpm install
-RUN pnpm run tsc
+#RUN npm run tsc
 
 # 启动
-CMD echo $SERVER_NAME && echo $AUTHOR_NAME && pnpm start
+CMD echo $SERVER_NAME && echo $AUTHOR_NAME && pnpm run dev
 
 # 环境变量
 ENV SERVER_NAME='server'
