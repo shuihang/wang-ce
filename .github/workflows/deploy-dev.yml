@@ -43,16 +43,16 @@ jobs:
                       # 删除 origin ，否则会暴露 github 密码
                     git remote remove origin
                     
+                    # 暂时没在服务器上用docker 启动成功
+                      # 启动 docker
+                      # 和 docker-compose.yml service 名字一致
+                    # docker-compose build wang-ce-server
+                    # docker-compose up -d
                     rm -rf node_modules
                     rm -rf .pnpm-store
                     pnpm install
                     pnpm run tsc
                     pnpm start
-                    # 暂时没在服务器上用docker 启动成功
-                      # 启动 docker
-                      # 和 docker-compose.yml service 名字一致
-#                    docker-compose build wang-ce-server
-#                    docker-compose up -d
                   "
             - name: delete ssh key # 删除 ssh key
               run: rm -rf ~/.ssh/id_rsa
