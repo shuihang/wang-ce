@@ -50,10 +50,9 @@ jobs:
                     # docker-compose up -d
                     rm -rf node_modules
                     rm -rf .pnpm-store
-                    npm install pnpm -g
-                    pnpm install
-                    pnpm run tsc
-                    pnpm start
+                    npm install
+                    npm run tsc
+                    npm start
                   "
             - name: delete ssh key # 删除 ssh key
               run: rm -rf ~/.ssh/id_rsa
