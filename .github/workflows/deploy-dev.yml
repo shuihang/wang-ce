@@ -50,6 +50,7 @@ jobs:
                     # docker-compose up -d
                     rm -rf node_modules
                     rm -rf .pnpm-store
+                    npm install pnpm -g
                     pnpm install
                     pnpm run tsc
                     pnpm start
