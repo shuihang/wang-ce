@@ -44,7 +44,7 @@ jobs:
                     git remote remove origin
                       # 启动 docker
                       # 和 docker-compose.yml service 名字一致
-                    docker-compose build test-server
+                    docker-compose build wang-ce-server
                     docker-compose up -d
                   "
             - name: delete ssh key # 删除 ssh key
