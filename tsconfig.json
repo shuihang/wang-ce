@@ -6,5 +6,7 @@
       "@/module/*": ["app/module/*"]
     },
     "baseUrl": ".",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
   }
 }

@@ -19,6 +19,7 @@
     "clean": "tsc -b --clean"
   },
   "dependencies": {
+    "@alicloud/pop-core": "^1.7.13",
     "@eggjs/tegg": "^3.5.2",
     "@eggjs/tegg-aop-plugin": "^3.5.2",
     "@eggjs/tegg-config": "^3.2.3",
@@ -27,9 +28,14 @@
     "@eggjs/tegg-plugin": "^3.5.2",
     "@eggjs/tegg-schedule-plugin": "^3.5.2",
     "egg": "^3.15.0",
+    "egg-cors": "^3.0.0",
+    "egg-jwt": "^3.1.7",
+    "egg-mongoose": "^4.0.1",
+    "egg-multipart": "^3.3.0",
     "egg-mysql": "^4.0.0",
     "egg-scripts": "^2.17.0",
-    "egg-tracer": "^2.0.0"
+    "egg-tracer": "^2.0.0",
+    "egg-validate": "^2.0.2"
   },
   "devDependencies": {
     "@eggjs/tsconfig": "1",

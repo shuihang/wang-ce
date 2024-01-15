@@ -33,6 +33,22 @@ const plugin: EggPlugin = {
     enable: true,
     package: 'egg-mysql',
   },
+  mongoose: {
+    enable: true,
+    package: 'egg-mongoose',
+  },
+  cors: {
+    enable: true,
+    package: 'egg-cors',
+  },
+  validate: {
+    enable: true,
+    package: 'egg-validate',
+  },
+  jwt: {
+    enable: true,
+    package: 'egg-jwt',
+  },
 };
 
 export default plugin;

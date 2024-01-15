@@ -3,5 +3,10 @@
   "extends": [
     "eslint-config-egg/typescript",
     "eslint-config-egg/lib/rules/enforce-node-prefix"
-  ]
+  ],
+  "rules": {
+    // Note: you must disable the base rule as it can report incorrect errors
+    "no-restricted-imports": "off",
+    "@typescript-eslint/no-restricted-imports": "error"
+  }
 }

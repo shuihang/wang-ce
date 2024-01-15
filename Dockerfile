@@ -9,13 +9,13 @@ RUN ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shang
 # 安装RabbitMQ依赖
 RUN rm -rf node_modules
 RUN rm -rf .pnpm-store
-# RUN npm install pnpm -g
+RUN npm install pnpm -g
 # RUN pnpm config set registry https://registry.npmmirror.com
-RUN npm install
+RUN pnpm install
 # RUN pnpm run tsc
 
 # 启动
-CMD echo $SERVER_NAME && echo $AUTHOR_NAME && npm run dev
+CMD echo $SERVER_NAME && echo $AUTHOR_NAME && pnpm run dev
 
 # 环境变量
 ENV SERVER_NAME='server'

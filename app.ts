@@ -1,5 +1,6 @@
 import { Application, IBoot } from 'egg';
-import { routerHead } from './config/env';
+import { ROUTER_HEAD, UPLOAD_DIR } from './config/env';
+import { join } from 'path';
 
 export default class FooBoot implements IBoot {
   readonly app: Application;
@@ -10,10 +11,15 @@ export default class FooBoot implements IBoot {
     // 准备调用configDidLoad，
     // Config、plugin文件被引用，
     // 这是修改配置的最后机会。
-    process.env.ROUTER_HEAD = routerHead;
+    process.env.ROUTER_HEAD = ROUTER_HEAD;
+    process.env.UPLOAD_DIR = UPLOAD_DIR;
   }
   configDidLoad() {
     // Config, plugin 文件已加载。
+    /* 导入验证规则 */
+    const directory = join(this.app.baseDir, 'app/module/bar/validate');
+    // console.log('导入验证规则', directory);
+    this.app.loader.loadToApp(directory, 'validate');
   }
   async didLoad() {
     // 所有文件都已加载，请在此处启动插件。
